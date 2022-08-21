@@ -6,7 +6,7 @@
   },
   "miniprogramRoot": "miniprogram/",
   "compileType": "miniprogram",
-  "projectname": "ts-demo",
+  "projectname": "task-queue",
   "setting": {
     "useCompilerPlugins": [
       "typescript"
@@ -17,7 +17,14 @@
       "outputPath": ""
     },
     "minifyWXSS": false,
-    "minifyWXML": false
+    "minifyWXML": false,
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "package.json",
+        "miniprogramNpmDistDir": "miniprogram/"
+      }
+    ]
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
