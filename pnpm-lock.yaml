@@ -4,11 +4,11 @@ specifiers:
   '@antfu/eslint-config': ^0.26.1
   eslint: ^8.22.0
   miniprogram-api-typings: ^2.8.3-1
-  miniprogram-setup: ^0.1.1
+  miniprogram-setup: ^0.1.2
   typescript: '*'
 
 dependencies:
-  miniprogram-setup: 0.1.1
+  miniprogram-setup: 0.1.2
 
 devDependencies:
   '@antfu/eslint-config': 0.26.1_4rv7y5c6xz3vfxwhbrcxxi73bq
@@ -1619,8 +1619,8 @@ packages:
     resolution: {integrity: sha512-ibvbqeslVFur0IAvTxLMvsbtvVcMo6gwvOnj0YZHV7aeDLu091VQRrETT2QuiG9P6aZWRcxeNGJChRKVPCp9VQ==}
     dev: true
 
-  /miniprogram-setup/0.1.1:
-    resolution: {integrity: sha512-vnKc6xmJ/F43c6EEaiQ+XL+O7mBZPTXOffAgbk5W7t5+aBe0vv2XVJMCVC6j/8CycD0CgJYYJi0RvoQRbWgy4A==}
+  /miniprogram-setup/0.1.2:
+    resolution: {integrity: sha512-cyLXpFw57PIp4fpnScB99G5SEYnf0J6A8OzRY7/1bPcf+l+9LkuZekl8d0zKcbWENBaA99wdduhBLnnMyjSF8g==}
     dev: false
 
   /ms/2.0.0:

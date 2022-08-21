@@ -1,19 +1,22 @@
 // logs.ts
 // const util = require('../../utils/util.js')
+import { PageWithSetup } from 'miniprogram-setup'
 import { formatTime } from '../../utils/util'
 
-Page({
+PageWithSetup({
   data: {
     logs: [],
   },
-  onLoad() {
-    this.setData({
-      logs: (wx.getStorageSync('logs') || []).map((log: string) => {
-        return {
-          date: formatTime(new Date(log)),
-          timeStamp: log,
-        }
-      }),
+  setup() {
+    const logs = (wx.getStorageSync('logs') || []).map((log: string) => {
+      return {
+        date: formatTime(new Date(log)),
+        timeStamp: log,
+      }
+    })
+
+    return () => ({
+      logs,
     })
   },
 })
