@@ -1,7 +1,7 @@
 {
   "name": "task-queue",
   "version": "1.0.0",
-  "description": "基于队列的形式进行任务管理。",
+  "description": "基于队列的形式进行个人的任务管理。",
   "scripts": {
   },
   "keywords": [
