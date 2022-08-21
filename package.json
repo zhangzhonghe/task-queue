@@ -1,0 +1,19 @@
+{
+  "name": "task-queue",
+  "version": "1.0.0",
+  "description": "基于队列的形式进行任务管理。",
+  "scripts": {
+  },
+  "keywords": [
+    "TODO",
+    "任务管理",
+    "队列"
+  ],
+  "author": "张中合",
+  "license": "",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^2.8.3-1"
+  }
+}
