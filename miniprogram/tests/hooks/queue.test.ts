@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import useQueue from '../hooks/useQueue'
+import useQueue from '../../hooks/useQueue'
 
 describe('Queue', () => {
   it('Basic', () => {

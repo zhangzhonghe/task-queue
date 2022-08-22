@@ -12,6 +12,7 @@ const useQueue = <T>(defaultQueue?: T[]) => {
     enqueue,
     dequeue,
     getFirst,
+    getQueue: () => queue,
   }
 }
 
