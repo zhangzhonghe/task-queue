@@ -20,6 +20,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.26.1",
     "eslint": "^8.22.0",
+    "jsdom": "^20.0.0",
     "miniprogram-api-typings": "^2.8.3-1",
     "typescript": "*",
     "vite": "^3.0.9",
