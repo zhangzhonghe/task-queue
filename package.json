@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "基于队列的形式进行个人的任务管理。",
   "scripts": {
+    "test": "vitest miniprogram/tests",
     "lint": "eslint ./miniprogram/**/*.ts",
     "lint:fix": "eslint --fix ./miniprogram/**/*.ts"
   },
@@ -20,6 +21,8 @@
     "@antfu/eslint-config": "^0.26.1",
     "eslint": "^8.22.0",
     "miniprogram-api-typings": "^2.8.3-1",
-    "typescript": "*"
+    "typescript": "*",
+    "vite": "^3.0.9",
+    "vitest": "^0.22.1"
   }
 }
