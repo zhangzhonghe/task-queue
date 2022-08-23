@@ -4,4 +4,7 @@
 global.wx = {
   getStorageSync: localStorage.getItem.bind(localStorage),
   setStorageSync: localStorage.setItem.bind(localStorage),
+  showToast: ({ title }: any) => {
+    throw new Error(title)
+  },
 }

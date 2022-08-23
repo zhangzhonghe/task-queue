@@ -1,5 +1,6 @@
 const useStorage = <T>(key: string) => {
-  let value: T = JSON.parse(wx.getStorageSync(key))
+  const unparsed = wx.getStorageSync(key)
+  let value: T | null = unparsed && JSON.parse(unparsed)
 
   const setValue = (v: T) => {
     wx.setStorageSync(key, JSON.stringify(v))

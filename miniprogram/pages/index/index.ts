@@ -1,9 +1,33 @@
 import { PageWithSetup } from 'miniprogram-setup'
+import useBasic from '../../model/useBasic'
 
 PageWithSetup({
   setup() {
-    return () => ({
-      motto: 'hello world',
-    })
+    let inputValue = ''
+    const { isInputVisible, showInput, addTask, completeTask, getCurrentTask }
+      = useBasic<string>()
+
+    const handleAddTask = () => {
+      addTask(inputValue)
+    }
+    const handleInput = (e: WechatMiniprogram.TextareaInput) => {
+      inputValue = e.detail.value
+    }
+    const handleShowInput = () => {
+      inputValue = ''
+      showInput()
+    }
+
+    return () => {
+      return {
+        isInputVisible: isInputVisible(),
+        showInput: handleShowInput,
+        addTask: handleAddTask,
+        completeTask,
+        currentTask: getCurrentTask(),
+        inputValue,
+        handleInput,
+      }
+    }
   },
 })

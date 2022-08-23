@@ -1,1 +1,7 @@
-/**app.wxss**/
+page {
+  --rounded-xl: 24rpx;
+}
+
+page {
+  background-color: #f8f8f8;
+}

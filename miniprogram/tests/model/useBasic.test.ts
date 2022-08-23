@@ -19,5 +19,7 @@ describe('Add or complete task', () => {
     completeTask()
     expect(isInputVisible()).toBe(false)
     expect(getCurrentTask()).toBe(null)
+
+    expect(() => addTask('')).toThrowError('任务不能为空')
   })
 })
