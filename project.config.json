@@ -16,15 +16,19 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "minifyWXSS": false,
-    "minifyWXML": false,
+    "minifyWXSS": true,
+    "minifyWXML": true,
     "packNpmManually": true,
     "packNpmRelationList": [
       {
         "packageJsonPath": "package.json",
         "miniprogramNpmDistDir": "miniprogram/"
       }
-    ]
+    ],
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},

@@ -24,6 +24,7 @@
   left: 0;
   right: 0;
   padding: 20rpx 10rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
   background-color: #fff;
 }
 
