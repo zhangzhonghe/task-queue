@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/zhangzhonghe/task-queue/compare/v1.0.1...v1.0.2) (2022-08-23)
+
+
+### Bug Fixes
+
+* auto-focus and support cancel ([6fcb27f](https://github.com/zhangzhonghe/task-queue/commit/6fcb27f7ebbdd74e14e57dd7dc35fa425158ec07))
+* the issue of not storage ([01039ca](https://github.com/zhangzhonghe/task-queue/commit/01039caf1d13d4a4dd6aac7215f1d7ac41d10b04))
+
 ### [1.0.1](https://github.com/zhangzhonghe/task-queue/compare/v1.0.0...v1.0.1) (2022-08-23)
 
 
