@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/zhangzhonghe/task-queue/compare/v1.0.0...v1.0.1) (2022-08-23)
+
+
+### Bug Fixes
+
+* compatible with full-screen phones ([1decb24](https://github.com/zhangzhonghe/task-queue/commit/1decb24df95103786f16d81b552dd029bf1ed7a0))
+
 ## 1.0.0 (2022-08-23)
 
 
