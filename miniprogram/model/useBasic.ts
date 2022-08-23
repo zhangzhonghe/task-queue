@@ -1,4 +1,3 @@
-import { onPageUnload } from 'miniprogram-setup'
 import useQueue from '../hooks/useQueue'
 import useStorage from '../hooks/useStorage'
 import { showToast } from '../wxApiProxy/index'
@@ -12,13 +11,13 @@ const useBasic = <T>() => {
     if (!task)
       return showToast('任务不能为空')
     enqueue(task)
+    setStorage(getQueue())
     isInputVisible = false
   }
   const completeTask = () => {
     dequeue()
+    setStorage(getQueue())
   }
-
-  onPageUnload(() => setStorage(getQueue()))
 
   return {
     isInputVisible: () => isInputVisible,
