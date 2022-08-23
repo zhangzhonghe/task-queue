@@ -7,6 +7,7 @@ const useBasic = <T>() => {
   const [getStorage, setStorage] = useStorage<T[]>('TASK_QUEUE')
   const { enqueue, dequeue, getFirst, getQueue } = useQueue<T>(getStorage())
   const showInput = () => (isInputVisible = true)
+  const hideInput = () => (isInputVisible = false)
   const addTask = (task: T) => {
     if (!task)
       return showToast('任务不能为空')
@@ -22,6 +23,7 @@ const useBasic = <T>() => {
   return {
     isInputVisible: () => isInputVisible,
     showInput,
+    hideInput,
     addTask,
     completeTask,
     getCurrentTask: getFirst,

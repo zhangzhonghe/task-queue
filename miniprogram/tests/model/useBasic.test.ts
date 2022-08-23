@@ -22,4 +22,16 @@ describe('Add or complete task', () => {
 
     expect(() => addTask('')).toThrowError('任务不能为空')
   })
+
+  it('Control input box display', () => {
+    const { isInputVisible, showInput, hideInput } = useBasic<string>()
+
+    expect(isInputVisible()).toBe(false)
+
+    showInput()
+    expect(isInputVisible()).toBe(true)
+
+    hideInput()
+    expect(isInputVisible()).toBe(false)
+  })
 })

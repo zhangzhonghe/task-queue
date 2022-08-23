@@ -4,8 +4,14 @@ import useBasic from '../../model/useBasic'
 PageWithSetup({
   setup() {
     let inputValue = ''
-    const { isInputVisible, showInput, addTask, completeTask, getCurrentTask }
-      = useBasic<string>()
+    const {
+      isInputVisible,
+      showInput,
+      hideInput,
+      addTask,
+      completeTask,
+      getCurrentTask,
+    } = useBasic<string>()
 
     const handleAddTask = () => {
       addTask(inputValue)
@@ -22,6 +28,7 @@ PageWithSetup({
       return {
         isInputVisible: isInputVisible(),
         showInput: handleShowInput,
+        hideInput,
         addTask: handleAddTask,
         completeTask,
         currentTask: getCurrentTask(),
