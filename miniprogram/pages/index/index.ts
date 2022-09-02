@@ -1,5 +1,5 @@
 import { PageWithSetup } from 'miniprogram-setup'
-import useBasic from '../../model/useBasic'
+import useBasic from '../../model/basic'
 
 PageWithSetup({
   setup() {
