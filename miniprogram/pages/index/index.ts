@@ -1,5 +1,6 @@
 import { PageWithSetup } from 'miniprogram-setup'
 import useBasic from '../../model/basic'
+import createTask from '../../model/createTask'
 
 PageWithSetup({
   setup() {
@@ -11,10 +12,10 @@ PageWithSetup({
       addTask,
       completeTask,
       getCurrentTask,
-    } = useBasic<string>()
+    } = useBasic()
 
     const handleAddTask = () => {
-      addTask(inputValue)
+      addTask(createTask(inputValue))
     }
     const handleInput = (e: WechatMiniprogram.TextareaInput) => {
       inputValue = e.detail.value

@@ -1,6 +1,6 @@
 <view class="content">
   <textarea wx:if="{{isInputVisible}}" class="textarea-x" auto-focus placeholder="请输入任务内容..." value="{{inputValue}}" bindconfirm="addTask" bindinput="handleInput"></textarea>
-  <text wx:elif="{{currentTask}}">{{currentTask}}</text>
+  <text wx:elif="{{currentTask}}">{{currentTask.text}}</text>
   <text wx:else class="nothing">暂无任务</text>
 </view>
 <view wx:if="{{isInputVisible}}" class="btn-group">
