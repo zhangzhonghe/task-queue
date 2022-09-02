@@ -4,10 +4,10 @@
   <text wx:else class="nothing">暂无任务</text>
 </view>
 <view wx:if="{{isInputVisible}}" class="btn-group">
-  <button class="btn" type="primary" bindtap="addTask">添加</button>
+  <button class="btn" type="primary" bindtap="addTask">确认</button>
   <button class="btn" bindtap="hideInput">取消</button>
 </view>
 <view wx:else class="btn-group">
-  <button class="btn" type="primary" bindtap="showInput">添加</button>
-  <button wx:if="{{currentTask}}" class="btn" bindtap="completeTask">完成</button>
+  <button class="btn" type="primary" bindtap="showInput">入队</button>
+  <button wx:if="{{currentTask}}" class="btn" bindtap="completeTask">出队</button>
 </view>

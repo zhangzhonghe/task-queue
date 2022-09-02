@@ -1,7 +1,10 @@
 page {
+  --rounded-xs: 8rpx;
+  --rounded-sm: 16rpx;
+  --rounded-md: 20rpx;
   --rounded-xl: 24rpx;
 }
 
 page {
-  background-color: #f8f8f8;
+  background-color: #f5f5f5;
 }

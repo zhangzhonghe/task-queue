@@ -7,7 +7,7 @@
   height: 70vh;
   background-color: #fff;
   margin: 20rpx;
-  border-radius: var(--rounded-xl);
+  border-radius: var(--rounded-sm);
   padding: 30rpx;
 }
 
@@ -23,12 +23,13 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20rpx 10rpx;
+  padding: 20rpx;
   padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
   background-color: #fff;
 }
 
 .btn {
+  line-height: 1.75em;
   flex: 1;
 }
 
