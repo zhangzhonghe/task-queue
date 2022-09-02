@@ -1,6 +1,6 @@
 import { PageWithSetup } from 'miniprogram-setup'
 import useBasic from '../../model/basic'
-import createTask from '../../model/task'
+import { createTask } from '../../model/task'
 
 PageWithSetup({
   setup() {

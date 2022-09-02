@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import useBasic from '../../model/basic'
-import createTask from '../../model/task'
+import { createTask } from '../../model/task'
 
 describe('Add or complete task', () => {
   const task = createTask('任务详情')
