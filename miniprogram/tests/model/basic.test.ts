@@ -1,16 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import useBasic from '../../model/basic'
+import createTask from '../../model/task'
 
 describe('Add or complete task', () => {
-  const task = {
-    text: '任务详情',
-    createdAt: '2020-01-01',
-    completedAt: '2020-01-01',
-    activityTimePeriod: [],
-    get isActive() {
-      return this.activityTimePeriod.length % 2 === 1
-    },
-  }
+  const task = createTask('任务详情')
 
   it('Add a task', () => {
     const { isInputVisible, getCurrentTask, showInput, addTask, completeTask }
@@ -25,6 +18,7 @@ describe('Add or complete task', () => {
     addTask(task)
     expect(isInputVisible()).toBe(false)
     expect(getCurrentTask()).toEqual(task)
+    expect(getCurrentTask()?.isActive).toEqual(false)
 
     completeTask()
     expect(isInputVisible()).toBe(false)

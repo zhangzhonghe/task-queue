@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import createTask from '../../model/createTask'
+import createTask from '../../model/task'
 import { isArray, isString } from '../../utils/util'
 
 describe('createTask', () => {
