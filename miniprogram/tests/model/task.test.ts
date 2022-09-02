@@ -1,4 +1,4 @@
-import { describe, expect, test, vi } from 'vitest'
+import { describe, expect, test } from 'vitest'
 import { complete, createTask, pause, start } from '../../model/task'
 import { isArray, isString, sleep } from '../../utils/util'
 

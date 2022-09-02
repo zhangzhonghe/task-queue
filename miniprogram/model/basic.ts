@@ -1,6 +1,6 @@
 import useQueue from '../hooks/useQueue'
 import useStorage from '../hooks/useStorage'
-import { showToast } from '../wxApiProxy/index'
+import { showToast } from '../wxApiProxy'
 
 export interface TaskData {
   /** 文本内容 */
