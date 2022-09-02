@@ -43,6 +43,19 @@ export function complete(task: TaskData) {
   }
 }
 
+export function getDuration(task: TaskData): number {
+  if (task.activityTimePeriod.length === 0)
+    return 0
+
+  let result = 0
+  for (let i = 0; i < task.activityTimePeriod.length; i += 2) {
+    const start = new Date(task.activityTimePeriod[i])
+    const end = new Date(task.activityTimePeriod[i + 1] || getCurrentDate())
+    result += end.getTime() - start.getTime()
+  }
+  return result
+}
+
 function getCurrentDate() {
   return new Date().toISOString()
 }

@@ -1,6 +1,12 @@
 import { describe, expect, test } from 'vitest'
-import { complete, createTask, pause, start } from '../../model/task'
-import { isArray, isString, sleep } from '../../utils/util'
+import {
+  complete,
+  createTask,
+  getDuration,
+  pause,
+  start,
+} from '../../model/task'
+import { isArray, isString, sleep } from '../../utils'
 
 describe('task', () => {
   test('create a task', () => {
@@ -67,5 +73,20 @@ describe('task', () => {
       task.activityTimePeriod[task.activityTimePeriod.length - 1]
         === task.completedAt,
     ).toBe(false)
+  })
+
+  test('duration of task', async () => {
+    const task = createTask('任务详情')
+
+    start(task)
+    await sleep(1000)
+    pause(task)
+    await sleep(1000)
+    start(task)
+    await sleep(1000)
+    complete(task)
+
+    // 每次測試都會有一點誤差，所以這裡用誤差小於 100 毫秒的方式來測試
+    expect(getDuration(task) - 2000 < 50).toBe(true)
   })
 })
