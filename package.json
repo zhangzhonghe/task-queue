@@ -18,7 +18,7 @@
   "author": "张中合",
   "license": "",
   "dependencies": {
-    "miniprogram-setup": "^0.1.2"
+    "miniprogram-setup": "^0.1.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.26.1",

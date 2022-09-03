@@ -6,14 +6,14 @@ specifiers:
   eslint: ^8.22.0
   jsdom: ^20.0.0
   miniprogram-api-typings: ^2.8.3-1
-  miniprogram-setup: ^0.1.2
+  miniprogram-setup: ^0.1.4
   standard-version: ^9.5.0
   typescript: '*'
   vite: ^3.0.9
   vitest: ^0.22.1
 
 dependencies:
-  miniprogram-setup: 0.1.2
+  miniprogram-setup: 0.1.4
 
 devDependencies:
   '@antfu/eslint-config': 0.26.1_4rv7y5c6xz3vfxwhbrcxxi73bq
@@ -2655,8 +2655,8 @@ packages:
     resolution: {integrity: sha512-ibvbqeslVFur0IAvTxLMvsbtvVcMo6gwvOnj0YZHV7aeDLu091VQRrETT2QuiG9P6aZWRcxeNGJChRKVPCp9VQ==}
     dev: true
 
-  /miniprogram-setup/0.1.2:
-    resolution: {integrity: sha512-cyLXpFw57PIp4fpnScB99G5SEYnf0J6A8OzRY7/1bPcf+l+9LkuZekl8d0zKcbWENBaA99wdduhBLnnMyjSF8g==}
+  /miniprogram-setup/0.1.4:
+    resolution: {integrity: sha512-haHMfd4eNuuILXiYn69bmDNc1BVUHWHzGGm6tWVXN+iryGTQJjjFZYSvBYs9+mBMLfAtDbQc7itEyaD8+wJCUw==}
     dev: false
 
   /modify-values/1.0.1:
