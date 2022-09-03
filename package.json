@@ -4,6 +4,8 @@
   "description": "基于队列的形式进行个人的任务管理。",
   "scripts": {
     "test": "vitest miniprogram/tests",
+    "test:ui": "vitest --ui miniprogram/tests",
+    "vitest": "vitest",
     "lint": "eslint ./miniprogram/**/*.ts",
     "lint:fix": "eslint --fix ./miniprogram/**/*.ts",
     "release": "standard-version"
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.26.1",
+    "@vitest/ui": "^0.22.1",
     "eslint": "^8.22.0",
     "jsdom": "^20.0.0",
     "miniprogram-api-typings": "^2.8.3-1",

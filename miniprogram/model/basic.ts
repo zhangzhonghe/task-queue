@@ -11,17 +11,6 @@ export interface TaskData {
   completedAt: string
   /** 任务进行中的时间段 */
   activityTimePeriod: string[]
-  /**
-   * 当前任务是否进行中，可由 **activityTimePeriod** 推导出
-   *
-   * 例如：
-   * ```js
-   * get isActive() {
-   *  return this.activityTimePeriod.length % 2 === 1
-   * }
-   * ```
-   */
-  readonly isActive?: boolean
 }
 
 const useBasic = () => {
@@ -43,6 +32,10 @@ const useBasic = () => {
     dequeue()
     setStorage(getQueue())
   }
+
+  wx.onAppHide(() => {
+    setStorage(getQueue())
+  })
 
   return {
     isInputVisible: () => isInputVisible,

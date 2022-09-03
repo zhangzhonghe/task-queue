@@ -3,6 +3,7 @@ import {
   complete,
   createTask,
   getDuration,
+  isActive,
   pause,
   start,
 } from '../../model/task'
@@ -16,28 +17,28 @@ describe('task', () => {
     expect(isString(task.createdAt)).toBe(true)
     expect(isString(task.completedAt)).toBe(true)
     expect(isArray(task.activityTimePeriod)).toBe(true)
-    expect(task.isActive).toBe(false)
+    expect(isActive(task)).toBe(false)
   })
 
   test('start or pause a task', () => {
     const task = createTask('任务详情')
 
-    expect(task.isActive).toBe(false)
+    expect(isActive(task)).toBe(false)
 
     start(task)
-    expect(task.isActive).toBe(true)
+    expect(isActive(task)).toBe(true)
     expect(task.activityTimePeriod.length).toBe(1)
     // 进行中的任务再次开启无效
     start(task)
-    expect(task.isActive).toBe(true)
+    expect(isActive(task)).toBe(true)
     expect(task.activityTimePeriod.length).toBe(1)
 
     pause(task)
-    expect(task.isActive).toBe(false)
+    expect(isActive(task)).toBe(false)
     expect(task.activityTimePeriod.length).toBe(2)
     // 已暂停的任务再次暂停无效
     pause(task)
-    expect(task.isActive).toBe(false)
+    expect(isActive(task)).toBe(false)
     expect(task.activityTimePeriod.length).toBe(2)
   })
 
@@ -48,7 +49,7 @@ describe('task', () => {
     start(task)
     await sleep(1000)
     complete(task)
-    expect(task.isActive).toBe(false)
+    expect(isActive(task)).toBe(false)
     expect(task.completedAt).toBeTruthy()
     expect(task.activityTimePeriod.length).toBe(2)
     expect(
@@ -88,5 +89,17 @@ describe('task', () => {
 
     // 每次測試都會有一點誤差，所以這裡用誤差小於 100 毫秒的方式來測試
     expect(getDuration(task) - 2000 < 50).toBe(true)
+  })
+
+  test('isActive of task', () => {
+    const task = createTask('任务详情')
+    expect(isActive(task)).toBe(false)
+    start(task)
+    expect(isActive(task)).toBe(true)
+    pause(task)
+    expect(isActive(task)).toBe(false)
+    start(task)
+    complete(task)
+    expect(isActive(task)).toBe(false)
   })
 })

@@ -7,4 +7,7 @@ global.wx = {
   showToast: ({ title }: any) => {
     throw new Error(title)
   },
+  onAppHide: (fn: () => void) => {
+    (global as any).onAppHide = fn
+  },
 }

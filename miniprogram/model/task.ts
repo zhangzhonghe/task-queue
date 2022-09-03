@@ -7,14 +7,11 @@ export function createTask(text: string): TaskData {
     createdAt: getCurrentDate(),
     completedAt: '',
     activityTimePeriod: [],
-    get isActive() {
-      return this.activityTimePeriod.length % 2 === 1
-    },
   }
 }
 
 export function start(task: TaskData) {
-  if (task.isActive) {
+  if (isActive(task)) {
     console.warn('任务正在进行中')
     return
   }
@@ -22,7 +19,7 @@ export function start(task: TaskData) {
 }
 
 export function pause(task: TaskData) {
-  if (!task.isActive) {
+  if (!isActive(task)) {
     console.warn('任务未开始')
     return
   }
@@ -33,7 +30,7 @@ export function complete(task: TaskData) {
   if (task.activityTimePeriod.length === 0)
     return showToast('任务从未开始过')
 
-  if (task.isActive) {
+  if (isActive(task)) {
     pause(task)
     task.completedAt
       = task.activityTimePeriod[task.activityTimePeriod.length - 1]
@@ -54,6 +51,10 @@ export function getDuration(task: TaskData): number {
     result += end.getTime() - start.getTime()
   }
   return result
+}
+
+export function isActive(task: TaskData) {
+  return task.activityTimePeriod.length % 2 === 1
 }
 
 function getCurrentDate() {

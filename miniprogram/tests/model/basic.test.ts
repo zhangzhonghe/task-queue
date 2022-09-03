@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import useBasic from '../../model/basic'
-import { createTask } from '../../model/task'
+import { createTask, isActive, start } from '../../model/task'
+
+declare function onAppHide(): void
 
 describe('Add or complete task', () => {
   const task = createTask('任务详情')
@@ -18,7 +20,7 @@ describe('Add or complete task', () => {
     addTask(task)
     expect(isInputVisible()).toBe(false)
     expect(getCurrentTask()).toEqual(task)
-    expect(getCurrentTask()?.isActive).toEqual(false)
+    expect(isActive(getCurrentTask()!)).toEqual(false)
 
     completeTask()
     expect(isInputVisible()).toBe(false)
@@ -37,5 +39,22 @@ describe('Add or complete task', () => {
 
     hideInput()
     expect(isInputVisible()).toBe(false)
+  })
+
+  it('get task from storage', () => {
+    const { getCurrentTask, addTask } = useBasic()
+    const task = JSON.parse(JSON.stringify(createTask('任务详情')))
+    addTask(task)
+    expect(getCurrentTask()).toEqual(task)
+    expect(isActive(getCurrentTask()!)).toBe(false)
+    start(getCurrentTask()!)
+    expect(isActive(getCurrentTask()!)).toBe(true)
+
+    // 模拟小程序生命周期
+    onAppHide()
+
+    const { getCurrentTask: getCurrentTask2 } = useBasic()
+    expect(getCurrentTask2()).toEqual(task)
+    expect(isActive(getCurrentTask2()!)).toBe(true)
   })
 })
