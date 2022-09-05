@@ -23,6 +23,7 @@ PageWithSetup({
       completeTask,
       getCurrentTask,
     } = useBasic()
+    const { getDuration, toggleTimer } = useDuration(getCurrentTask)
 
     const handleAddTask = () => {
       addTask(createTask(inputValue))
@@ -39,9 +40,8 @@ PageWithSetup({
     const handleComplete = () => {
       complete(getCurrentTask()!)
       completeTask()
+      toggleTimer(false)
     }
-
-    const { getDuration, toggleTimer } = useDuration(getCurrentTask)
 
     const handleDoubleClick = doubleClick(() => {
       const task = getCurrentTask()
@@ -49,13 +49,17 @@ PageWithSetup({
         return
 
       startOrPause(task)
-      toggleTimer()
     })
 
     function startOrPause(task: TaskData) {
-      if (isActive(task))
+      if (isActive(task)) {
         pause(task)
-      else start(task)
+        toggleTimer(false)
+      }
+      else {
+        start(task)
+        toggleTimer(true)
+      }
     }
 
     return () => {
@@ -79,13 +83,14 @@ PageWithSetup({
 })
 
 function useDuration(getTask: () => TaskData | null) {
-  let result = ''
+  let result = getDurationString(getTask())
   let timer: any
 
-  const toggleTimer = () => {
-    if (timer) {
-      clearInterval(timer)
+  const toggleTimer = (isStart: boolean) => {
+    if (!isStart) {
+      timer && clearInterval(timer)
       timer = null
+      result = getDurationString(getTask())
     }
     else {
       // #2
