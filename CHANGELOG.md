@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/zhangzhonghe/task-queue/compare/v1.0.2...v1.1.0) (2022-09-05)
+
+
+### Features
+
+* add getDuration for task ([16ee3a9](https://github.com/zhangzhonghe/task-queue/commit/16ee3a968a70b8f2c92f3731d549f24e1bde8b71))
+* add handlers for task ([ecec102](https://github.com/zhangzhonghe/task-queue/commit/ecec1023b5a06499f45feff2486c8c0fd48b9a1c))
+* add msToString ([d42778c](https://github.com/zhangzhonghe/task-queue/commit/d42778c8e91a1784d1061804c857506c6b8b4555))
+* isActive ([516315e](https://github.com/zhangzhonghe/task-queue/commit/516315e1beccd396e6a10e0d9c8a7297433cbd7f))
+* support to display duration ([6800b5c](https://github.com/zhangzhonghe/task-queue/commit/6800b5cc8df3d9e87a04c4339bc61ff2189c812d))
+
+
+### Bug Fixes
+
+* [#2](https://github.com/zhangzhonghe/task-queue/issues/2) ([6fa26cd](https://github.com/zhangzhonghe/task-queue/commit/6fa26cda52cc4cba0073708e85c1f1ce1edba87a))
+* issue [#1](https://github.com/zhangzhonghe/task-queue/issues/1) ([b8115cb](https://github.com/zhangzhonghe/task-queue/commit/b8115cb82073ffb76830ed6496d705753c5d333f))
+
 ### [1.0.2](https://github.com/zhangzhonghe/task-queue/compare/v1.0.1...v1.0.2) (2022-08-23)
 
 
