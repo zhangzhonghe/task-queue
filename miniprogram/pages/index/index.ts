@@ -41,12 +41,15 @@ PageWithSetup({
       completeTask()
     }
 
+    const { getDuration, toggleTimer } = useDuration(getCurrentTask)
+
     const handleDoubleClick = doubleClick(() => {
       const task = getCurrentTask()
       if (!task)
         return
 
       startOrPause(task)
+      toggleTimer()
     })
 
     function startOrPause(task: TaskData) {
@@ -54,8 +57,6 @@ PageWithSetup({
         pause(task)
       else start(task)
     }
-
-    const getDuration = useDuration(getCurrentTask)
 
     return () => {
       return {
@@ -79,15 +80,30 @@ PageWithSetup({
 
 function useDuration(getTask: () => TaskData | null) {
   let result = ''
-  const timer = setInterval(() => {
-    result = getDurationString(getTask())
-  }, 1000)
+  let timer: any
+
+  const toggleTimer = () => {
+    if (timer) {
+      clearInterval(timer)
+      timer = null
+    }
+    else {
+      // #2
+      result = result || '0 秒'
+      timer = setInterval(() => {
+        result = getDurationString(getTask())
+      }, 1000)
+    }
+  }
 
   onPageUnload(() => {
-    clearInterval(timer)
+    timer && clearInterval(timer)
   })
 
-  return () => result
+  return {
+    getDuration: () => result,
+    toggleTimer,
+  }
 }
 
 function getDurationString(task: TaskData | null) {
