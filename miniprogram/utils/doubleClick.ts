@@ -6,6 +6,10 @@ export function doubleClick(
   return (e: WechatMiniprogram.CustomEvent) => {
     if (realHandler.lastTimeStamp === undefined) {
       realHandler.lastTimeStamp = e.timeStamp
+      // fix #1
+      setTimeout(() => {
+        realHandler.lastTimeStamp = undefined
+      }, 300)
       return
     }
     if (e.timeStamp - realHandler.lastTimeStamp < 300)
