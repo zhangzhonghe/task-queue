@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/zhangzhonghe/task-queue/compare/v1.1.1...v1.1.2) (2022-09-06)
+
+
+### Bug Fixes
+
+* 修复已知问题 ([481200a](https://github.com/zhangzhonghe/task-queue/commit/481200a318ae94684d5057e8ef532693c27a0cbb))
+
 ### [1.1.1](https://github.com/zhangzhonghe/task-queue/compare/v1.1.0...v1.1.1) (2022-09-05)
 
 
