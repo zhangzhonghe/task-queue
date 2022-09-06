@@ -83,7 +83,8 @@ PageWithSetup({
 })
 
 function useDuration(getTask: () => TaskData | null) {
-  let result = getDurationString(getTask())
+  const task = getTask()
+  let result = getDurationString(task)
   let timer: any
 
   const toggleTimer = (isStart: boolean) => {
@@ -100,6 +101,9 @@ function useDuration(getTask: () => TaskData | null) {
       }, 1000)
     }
   }
+
+  if (task && isActive(task))
+    toggleTimer(true)
 
   onPageUnload(() => {
     timer && clearInterval(timer)
